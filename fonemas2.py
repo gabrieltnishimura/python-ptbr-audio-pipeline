@@ -7,8 +7,8 @@ import numpy as np
 
 WORDS_FILE = '_words.npy'
 PHONEMES_FILE = '_phonemes.npy'
-letters = ['c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-           'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+letters = ['d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+           'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'y', 'z']
 words, phonemes = [], []
 
 
