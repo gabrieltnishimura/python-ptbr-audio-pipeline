@@ -8,7 +8,7 @@ import numpy as np
 WORDS_FILE = '-words.npy'
 PHONEMES_FILE = '-phonemes.npy'
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-           'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x' 'y', 'z']
+           'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 words, phonemes = [], []
 
 
@@ -69,10 +69,8 @@ def loop_letter(letter):
 
 def persist(letter: str):
     print('Saving ' + str(len(words)) + ' words on letter \'' + letter + '\'')
-    npwords = np.array(words)
-    npphonemes = np.array(phonemes)
-    np.save(letter+WORDS_FILE, npwords)
-    np.save(letter+PHONEMES_FILE, npphonemes)
+    np.save(letter+WORDS_FILE, np.array(words))
+    np.save(letter+PHONEMES_FILE, np.array(phonemes))
     words.clear()
     phonemes.clear()
 
