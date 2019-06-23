@@ -6,12 +6,16 @@ DICT_FILE = 'dict.npy'
 words, phonemes = np.load(
     "phonemes/"+WORDS_FILE), np.load("phonemes/"+PHONEMES_FILE)
 
-concatenated_words, concatenated_phonemes = [], []
 dict = {}
 
 i = 0
+WEIRD_SEPARATOR = ' ou '
 for word in words:
-    dict[word.replace('·', '')] = phonemes[i].split('.')
+    word = word.replace('·', '')
+    if WEIRD_SEPARATOR in phonemes[i]:
+        dict[word] = phonemes[i].split(WEIRD_SEPARATOR, 1)[0].split('.')
+    else:
+        dict[word] = phonemes[i].split('.')
     i += 1
 
 np.save(DICT_FILE, dict)
